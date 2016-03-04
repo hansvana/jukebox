@@ -61,7 +61,6 @@ let jukebox = {
                 }
 
 
-
             },
             failed => {console.log(failed)}
         )
