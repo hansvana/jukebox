@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #e0e0e0;
+}
+
+#duration {
+    height: 100px;
+    background-color: #036;
+}
+
+#progress {
+    height: 100%;
+    background-color: #06c;
+    width: 50%;
+}

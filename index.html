@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Jukebox</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/script.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div id="duration"><div id="progress"></div></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div id="currentSong">
+                <h2>Nu aan het spelen:</h2>
+                <img class="img-thumbnail" alt="Artist image" id="currentSong-image">
+                <h2 id="currentSong-title"></h2>
+                <p id="currentSong-artist"></p>
+
+            </div>
+        </div>
+        <div class="col-md-8">
+            <h2>Zometeen:</h2>
+            <div class="list-group" id="comingUp"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
