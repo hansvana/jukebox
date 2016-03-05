@@ -1,6 +1,6 @@
 var express = require('express');
-var bodyParser = require('body-parser')
-var fs = require('fs');
+var bodyParser = require('body-parser');
+
 var app = express();
 
 app.use( bodyParser.json() );
@@ -22,18 +22,6 @@ var allowCrossDomain = function(req, res, next) {
     }
 };
 app.use(allowCrossDomain);
-
-
-
-fs.readdir('mp3', (err, files) => {
-    if (err) throw err;
-    files = files.filter( file => {
-        return (file.split('.')[1] === 'mp3');
-    }).map( file => {
-        return file.split('.')[0];
-    });
-    fileList = files.slice();
-});
 
 app.post('/fuzzySearch', function (req, res) {
     console.log(req.body);
@@ -57,6 +45,14 @@ app.post('/sendRequest', function (req, res) {
     res.send(JSON.stringify({ a: 1 }));
 });
 
+app.post('/setFileList', function (req, res) {
+    var nFiles = req.body.length;
+    console.log("Received " + nFiles + " file names")
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({ type: "success", text: "Received " + nFiles + " file names" }));
+});
+
 app.listen(3000, function () {
     console.log('App listening on port 3000!');
+    console.log('Waiting for file list');
 });
