@@ -52,6 +52,14 @@ app.post('/sendRequest', function (req, res) {
     res.send(JSON.stringify({ a: 1 }));
 });
 
+app.post('/setFileList', function (req, res) {
+    var nFiles = req.body.length;
+    console.log("Received " + nFiles + " file names");
+    
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({ type: "success", text: "Received " + nFiles + " file names" }));
+});
+
 app.get('/', function (req, res) {
     res.send("Hello World!");
 });

@@ -1,11 +1,11 @@
 var fs = require('fs');
 var fileList = [];
 
-var express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
-app.use( bodyParser.json() );
-
+var http = require('http');
+var options = {
+    host: 'http://188.166.23.192:3000/',
+    path:
+}
 
 fs.readdir('mp3', (err, files) => {
     if (err) throw err;
@@ -17,9 +17,12 @@ fs.readdir('mp3', (err, files) => {
         fileList.push({
             id: i++,
             fileName: file
-        });
+        })
     }
+
     console.log(fileList);
+
+
 });
 
 
