@@ -49,15 +49,19 @@ let client = {
         }
     },
     sendRequest: function(track) {
-        this.loadJSON('http://127.0.0.1:3000/sendRequest',
-            {track, user: id("name").value},
-            data => {
-                this.populateList(data)
-            },
-            failed => {
-                console.log(failed)
-            }
-        );
+        let sure = confirm(track + " aanvragen?")
+
+        if (sure) {
+            this.loadJSON('http://127.0.0.1:3000/sendRequest',
+                {track, user: id("name").value},
+                data => {
+                    console.log(data)
+                },
+                failed => {
+                    console.log(failed)
+                }
+            );
+        }
     },
     loadJSON: function(path, data, success, error) {
         let xhr = new XMLHttpRequest();

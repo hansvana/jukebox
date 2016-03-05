@@ -24,7 +24,6 @@ var allowCrossDomain = function(req, res, next) {
 app.use(allowCrossDomain);
 
 
-
 fs.readdir('mp3', (err, files) => {
     if (err) throw err;
     files = files.filter( file => {
@@ -33,15 +32,10 @@ fs.readdir('mp3', (err, files) => {
         return file.split('.')[0];
     });
     fileList = files.slice();
+    console.log("found " + fileList.length + " files.")
 });
 
 app.post('/fuzzySearch', function (req, res) {
-    console.log(req.body);
-
-    fileList.forEach(function(file){
-       console.log(file.indexOf(req.body.txt));
-    });
-
     var results = fileList.filter( file => {
         return ( file.indexOf(req.body.txt) !== -1 );
     });
