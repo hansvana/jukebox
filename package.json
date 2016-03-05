@@ -13,5 +13,8 @@
     "bootbox": "^4.4.0",
     "express": "^4.13.4",
     "jquery": "^2.2.1"
+  },
+  "scripts": {
+    "run": "node js/server.js"
   }
 }
