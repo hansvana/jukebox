@@ -16,7 +16,7 @@ let client = {
 
         if (search !== this.lastSearch) {
 
-            this.loadJSON('http://127.0.0.1:3000/fuzzySearch',
+            this.loadJSON('http://188.166.23.192:3000/fuzzySearch',
                 {txt: search},
                 data => {
                     this.populateList(data)
@@ -52,7 +52,7 @@ let client = {
         let sure = confirm(track + " aanvragen?")
 
         if (sure) {
-            this.loadJSON('http://127.0.0.1:3000/sendRequest',
+            this.loadJSON('http://188.166.23.192:3000/sendRequest',
                 {track, user: id("name").value},
                 data => {
                     console.log(data)

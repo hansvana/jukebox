@@ -22,7 +22,7 @@ var client = {
 
         if (search !== this.lastSearch) {
 
-            this.loadJSON('http://127.0.0.1:3000/fuzzySearch', { txt: search }, function (data) {
+            this.loadJSON('http://188.166.23.192:3000/fuzzySearch', { txt: search }, function (data) {
                 _this2.populateList(data);
             }, function (failed) {
                 console.log(failed);
@@ -79,7 +79,7 @@ var client = {
         var sure = confirm(track + " aanvragen?");
 
         if (sure) {
-            this.loadJSON('http://127.0.0.1:3000/sendRequest', { track: track, user: id("name").value }, function (data) {
+            this.loadJSON('http://188.166.23.192:3000/sendRequest', { track: track, user: id("name").value }, function (data) {
                 console.log(data);
             }, function (failed) {
                 console.log(failed);

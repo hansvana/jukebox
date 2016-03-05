@@ -36,6 +36,7 @@ fs.readdir('mp3', (err, files) => {
 });
 
 app.post('/fuzzySearch', function (req, res) {
+    console.log(req.body);
     var results = fileList.filter( file => {
         return ( file.indexOf(req.body.txt) !== -1 );
     });
