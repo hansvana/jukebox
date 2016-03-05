@@ -51,6 +51,10 @@ app.post('/sendRequest', function (req, res) {
     res.send(JSON.stringify({ a: 1 }));
 });
 
+app.get('/', function (req, res) {
+    res.send("Hello World!");
+});
+
 app.listen(3000, function () {
     console.log('App listening on port 3000!');
 });
